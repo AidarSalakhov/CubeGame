@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour
 {
-    bool isPaused = false;
+    public bool isPaused { get; private set; } = false;
 
     public void ExitGame()
     {
