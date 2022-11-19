@@ -17,7 +17,7 @@ public class AnimationSystem : MonoBehaviour
 
     void Update()
     {
-        speed = agent.speed;
+        speed = agent.desiredVelocity.magnitude;
         animator.SetFloat("Speed", speed);
     }
 }

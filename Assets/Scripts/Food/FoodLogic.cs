@@ -12,18 +12,12 @@ public class FoodLogic : MonoBehaviour
     public string gameObjectTag;
     private string objectName;
     private Vector3 randomPosition;
+    private bool onNavmesh;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         attributes = player.GetComponent<Attributes>();
-        randomPosition = new Vector3(Random.Range(-100, 100), 1.5f, Random.Range(-100, 100));
-        transform.position = randomPosition;
-    }
-
-    private void Update()
-    {
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,34 +36,21 @@ public class FoodLogic : MonoBehaviour
 
     private void SpawnFood()
     {
+        NavMeshHit Hit;
         randomPosition = new Vector3(Random.Range(-100, 100), 1.5f, Random.Range(-100, 100));
-
-        if (RandomPoint(Vector3.zero, 0f, out randomPosition))
+        onNavmesh = NavMesh.FindClosestEdge(randomPosition,out Hit, NavMesh.AllAreas);
+        if (onNavmesh)
         {
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
-        objectName = gameObject.name;
-        food = Instantiate(gameObject, randomPosition, rotation);
-        Destroy(gameObject);
-        food.GetComponent<FoodLogic>().enabled = true;
-        food.name = objectName;
+            objectName = gameObject.name;
+            food = Instantiate(gameObject, Hit.position, rotation);
+            Destroy(gameObject);
+            food.GetComponent<FoodLogic>().enabled = true;
+            food.name = objectName;
         }
-        
-    }
-
-  
-    private bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    {
-        for (int i = 0; i < 30; i++)
+        else
         {
-            Vector3 randomPoint = center + Random.insideUnitSphere * range;
-            NavMeshHit hit;
-            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-            {
-                result = hit.position;
-                return true;
-            }
+            SpawnFood();
         }
-        result = Vector3.zero;
-        return false;
     }
 }
