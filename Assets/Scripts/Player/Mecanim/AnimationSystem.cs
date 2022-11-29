@@ -6,18 +6,23 @@ using UnityEngine.AI;
 public class AnimationSystem : MonoBehaviour
 {
     private Animator animator;
-    public float speed;
+    public float Speed;
     private NavMeshAgent agent;
 
-    void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
     }
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
-        speed = agent.desiredVelocity.magnitude;
-        animator.SetFloat("Speed", speed);
+        Speed = agent.desiredVelocity.magnitude;
+        animator.SetFloat("Speed", Speed);
     }
 }

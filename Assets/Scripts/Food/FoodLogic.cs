@@ -8,11 +8,11 @@ public class FoodLogic : MonoBehaviour
     private GameObject player;
     private Attributes attributes;
     private GameObject food;
-    public float foodAmount;
-    public string gameObjectTag;
+    public float FoodAmount;
+    public string GameObjectTag;
     private string objectName;
     private Vector3 randomPosition;
-    private bool onNavmesh;
+    private bool isOnNavmesh;
 
     private void Start()
     {
@@ -24,7 +24,7 @@ public class FoodLogic : MonoBehaviour
     {
         if (other.tag.Equals("Player"))
         {
-            attributes.GettingFull(foodAmount);
+            attributes.GettingFull(FoodAmount);
             SpawnFood();
         }
 
@@ -38,8 +38,9 @@ public class FoodLogic : MonoBehaviour
     {
         NavMeshHit Hit;
         randomPosition = new Vector3(Random.Range(-100, 100), 1.5f, Random.Range(-100, 100));
-        onNavmesh = NavMesh.FindClosestEdge(randomPosition,out Hit, NavMesh.AllAreas);
-        if (onNavmesh)
+        //isOnNavmesh = NavMesh.FindClosestEdge(randomPosition,out Hit, NavMesh.AllAreas);
+        isOnNavmesh = NavMesh.SamplePosition(randomPosition,out Hit, 2f, NavMesh.AllAreas);
+        if (isOnNavmesh)
         {
             Quaternion rotation = Quaternion.Euler(0, 0, 0);
             objectName = gameObject.name;
