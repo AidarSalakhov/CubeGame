@@ -11,21 +11,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Food_Burger_Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3143110271498466121, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
+      propertyPath: FoodAmount
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 41.68035
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 41.68035
-      objectReference: {fileID: 0}
-    - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 41.68035
       objectReference: {fileID: 0}
     - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33,11 +25,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.47
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.00000068428
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6023604503177095540, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69,16 +61,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
---- !u!1 &4171735712163546682 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1884943241713429769, guid: 4708ba692d415be4c9451c6aa2f02f5b, type: 3}
-  m_PrefabInstance: {fileID: 2579527272743299891}
-  m_PrefabAsset: {fileID: 0}
---- !u!33 &-901581159668310818
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4171735712163546682}
-  m_Mesh: {fileID: 4300000, guid: 430156879fec00b4c8be6e44eab84172, type: 3}

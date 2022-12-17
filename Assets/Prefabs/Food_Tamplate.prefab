@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5253613838945979266}
   - component: {fileID: 3736308606133718055}
   - component: {fileID: 3143110271498466121}
-  - component: {fileID: -2364401801125108406}
+  - component: {fileID: -901581159668310818}
   m_Layer: 0
   m_Name: Food_Tamplate
   m_TagString: Food
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1884943241713429769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 80, y: 80, z: 80}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -104,11 +104,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FoodAmount: 0
   GameObjectTag: 
---- !u!33 &-2364401801125108406
+--- !u!33 &-901581159668310818
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884943241713429769}
-  m_Mesh: {fileID: 4300000, guid: 6d05be1b78e41a948b8d50bee67bce65, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 430156879fec00b4c8be6e44eab84172, type: 3}

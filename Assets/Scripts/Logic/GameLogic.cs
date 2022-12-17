@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AI;
 
 namespace MyGame.Logic
 {
     public class GameLogic : MonoBehaviour
     {
-        public bool isPaused { get; private set; } = false;
+        public bool _isPaused { get; private set; } = false;
 
         public void ExitGame()
         {
@@ -21,15 +22,15 @@ namespace MyGame.Logic
 
         public void PauseUnpause()
         {
-            if (isPaused)
+            if (_isPaused)
             {
                 Time.timeScale = 1;
-                isPaused = false;
+                _isPaused = false;
             }
             else
             {
                 Time.timeScale = 0;
-                isPaused = true;
+                _isPaused = true;
             }
         }
     }

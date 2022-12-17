@@ -6,8 +6,8 @@ using UnityEngine.AI;
 public class MoveBots : MonoBehaviour
 {
     private NavMeshAgent agent;
-    private Vector3[] foodArray;
-    private GameObject food;
+    private Vector3[] foodPositionArray;
+    private GameObject[] foodArray;
 
     private void Start()
     {
@@ -16,14 +16,16 @@ public class MoveBots : MonoBehaviour
 
     private void Update()
     {
-        foodArray = new Vector3[3];
-        food = GameObject.FindGameObjectWithTag("FoodSmall");
-        foodArray[0] = food.transform.position;
-        food = GameObject.FindGameObjectWithTag("FoodMedium");
-        foodArray[1] = food.transform.position;
-        food = GameObject.FindGameObjectWithTag("FoodLarge");
-        foodArray[2] = food.transform.position;
-        agent.SetDestination(GetClosestFood(foodArray));
+        foodPositionArray = new Vector3[3];
+        foodArray = new GameObject[3];
+
+        for (int i = 0; i < foodArray.Length; i++)
+        {
+            foodArray = GameObject.FindGameObjectsWithTag("Food");
+            foodPositionArray[i] = foodArray[i].transform.position;
+        }
+
+        agent.SetDestination(GetClosestFood(foodPositionArray));
     }
 
     private Vector3 GetClosestFood(Vector3[] food)
